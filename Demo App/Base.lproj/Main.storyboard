@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="37" id="mMc-Ms-8jF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MW-m5-yOC">
@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="37" id="dRa-lH-xHt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-7K-h4c" customClass="FBSDKProfilePictureView">
@@ -51,6 +51,9 @@
                                     <constraint firstAttribute="width" constant="37" id="oKJ-ik-vH5"/>
                                 </constraints>
                                 <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JTN-Ay-a7W"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -72,11 +75,31 @@
                         <outlet property="nameLabel" destination="8MW-m5-yOC" id="ptj-gl-yU4"/>
                         <outlet property="profilePictureView" destination="cI4-7K-h4c" id="ukZ-pt-OoC"/>
                         <outlet property="statusLabel" destination="9JW-cm-3oY" id="i9m-zR-t4s"/>
+                        <segue destination="suY-i1-zcW" kind="show" identifier="mainApp" id="UmQ-fi-osZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="849"/>
+        </scene>
+        <!--Main App-->
+        <scene sceneID="LTu-ux-uB0">
+            <objects>
+                <viewController id="suY-i1-zcW" customClass="MainAppViewController" customModule="Demo_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nms-Fk-cs9"/>
+                        <viewControllerLayoutGuide type="bottom" id="KFS-rB-MrB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gqn-AZ-zML">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main App" id="g6v-X9-B5j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5L1-Eg-ROF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2187" y="849"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qKY-QL-hzC">

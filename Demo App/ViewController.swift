@@ -46,6 +46,17 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    @IBAction func enterApp(sender: AnyObject) {
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            self.performSegueWithIdentifier("mainApp", sender: self)
+        } else {
+              let alertController = UIAlertController(title: "Error", message: "You are not logged in to Facebook", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
     //Mark -- Facebook Login button Delegate
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         statusLabel.text = "You are logged in as"
