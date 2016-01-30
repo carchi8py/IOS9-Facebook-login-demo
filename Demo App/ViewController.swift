@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         //Add the log in with facebook button to the bottom of our app
         let loginButton: FBSDKLoginButton = FBSDKLoginButton()
         loginButton.center = CGPoint(x: CGRectGetMidX(self.view.frame), y: CGRectGetHeight(self.view.frame)-loginButton.frame.height)
+        
+        loginButton.delegate = self
         self.view.addSubview(loginButton)
         
         if FBSDKAccessToken.currentAccessToken() != nil {
@@ -42,6 +44,17 @@ class ViewController: UIViewController {
             let name = result.valueForKey("name") as! String
             self.nameLabel.text = name
         }
+    }
+    
+    //Mark -- Facebook Login button Delegate
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        statusLabel.text = "You are logged in as"
+        displayName()
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        statusLabel.text = "You are logged out"
+        nameLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
