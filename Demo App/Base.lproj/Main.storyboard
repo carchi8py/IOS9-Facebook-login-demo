@@ -36,7 +36,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-7K-h4c">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-7K-h4c" customClass="FBSDKProfilePictureView">
                                 <rect key="frame" x="20" y="171" width="196" height="182"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -68,6 +68,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Facebook Login" id="aMY-bc-pAg"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="8MW-m5-yOC" id="ptj-gl-yU4"/>
+                        <outlet property="profilePictureView" destination="cI4-7K-h4c" id="ukZ-pt-OoC"/>
+                        <outlet property="statusLabel" destination="9JW-cm-3oY" id="i9m-zR-t4s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

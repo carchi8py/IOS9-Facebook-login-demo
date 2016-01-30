@@ -12,6 +12,11 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profilePictureView: FBSDKProfilePictureView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +24,24 @@ class ViewController: UIViewController {
         let loginButton: FBSDKLoginButton = FBSDKLoginButton()
         loginButton.center = CGPoint(x: CGRectGetMidX(self.view.frame), y: CGRectGetHeight(self.view.frame)-loginButton.frame.height)
         self.view.addSubview(loginButton)
+        
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            statusLabel.text = "You are logged in as"
+            
+            displayName()
+        } else {
+            statusLabel.text = "You are logged out"
+            nameLabel.text = ""
+        }
+    }
+
+    func displayName() {
+        let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler { (graphConnectionRequest, result, error) -> Void in
+         
+            let name = result.valueForKey("name") as! String
+            self.nameLabel.text = name
+        }
     }
 
     override func didReceiveMemoryWarning() {
