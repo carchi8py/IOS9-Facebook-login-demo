@@ -14,6 +14,9 @@
 		27E711F61C5D523E009869A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E711F41C5D523E009869A3 /* LaunchScreen.storyboard */; };
 		27E712011C5D523E009869A3 /* Demo_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E712001C5D523E009869A3 /* Demo_AppTests.swift */; };
 		27E7120C1C5D523E009869A3 /* Demo_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7120B1C5D523E009869A3 /* Demo_AppUITests.swift */; };
+		27E7121C1C5D5598009869A3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E712191C5D5598009869A3 /* FBSDKCoreKit.framework */; };
+		27E7121D1C5D5598009869A3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E7121A1C5D5598009869A3 /* FBSDKLoginKit.framework */; };
+		27E7121E1C5D5598009869A3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E7121B1C5D5598009869A3 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		27E712071C5D523E009869A3 /* Demo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7120B1C5D523E009869A3 /* Demo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_AppUITests.swift; sourceTree = "<group>"; };
 		27E7120D1C5D523E009869A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27E712191C5D5598009869A3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		27E7121A1C5D5598009869A3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		27E7121B1C5D5598009869A3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E7121D1C5D5598009869A3 /* FBSDKLoginKit.framework in Frameworks */,
+				27E7121C1C5D5598009869A3 /* FBSDKCoreKit.framework in Frameworks */,
+				27E7121E1C5D5598009869A3 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +86,9 @@
 		27E711DF1C5D523D009869A3 = {
 			isa = PBXGroup;
 			children = (
+				27E712191C5D5598009869A3 /* FBSDKCoreKit.framework */,
+				27E7121A1C5D5598009869A3 /* FBSDKLoginKit.framework */,
+				27E7121B1C5D5598009869A3 /* FBSDKShareKit.framework */,
 				27E711EA1C5D523E009869A3 /* Demo App */,
 				27E711FF1C5D523E009869A3 /* Demo AppTests */,
 				27E7120A1C5D523E009869A3 /* Demo AppUITests */,
@@ -399,6 +411,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Demo App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ogrebear.Demo-App";
@@ -410,6 +426,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Demo App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ogrebear.Demo-App";
