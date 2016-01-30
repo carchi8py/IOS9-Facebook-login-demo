@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Add the log in with facebook button to the bottom of our app
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.center = CGPoint(x: CGRectGetMidX(self.view.frame), y: CGRectGetHeight(self.view.frame)-loginButton.frame.height)
+        self.view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
